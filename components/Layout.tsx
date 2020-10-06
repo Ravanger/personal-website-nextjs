@@ -1,6 +1,8 @@
 import React from "react"
 import Head from "next/head"
 
+import MainMenu from "@components/MainMenu"
+
 type LayoutProps = {
   children?: React.ReactNode
   title?: string
@@ -14,7 +16,7 @@ const Layout = ({ children, title = "Title" }: LayoutProps) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
-      <nav></nav>
+      <MainMenu />
     </header>
     <main>{children}</main>
   </div>
