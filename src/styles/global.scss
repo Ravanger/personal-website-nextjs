@@ -1,0 +1,9 @@
+@use "fonts/_fonts" as *;
+@use "_colors" as *;
+@use "sass:color";
+
+body,
+html,
+#__next {
+  height: 100%;
+}

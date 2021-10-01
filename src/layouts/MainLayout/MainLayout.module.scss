@@ -1,0 +1,7 @@
+@use "/src/styles/_colors" as *;
+
+.layout {
+  color: $dark-text;
+  background-color: $dark-bg;
+  height: 100%;
+}
