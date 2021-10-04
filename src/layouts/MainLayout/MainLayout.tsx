@@ -5,7 +5,7 @@ import styles from "./MainLayout.module.scss"
 const MainLayout: React.FC = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <Spacer />
+      <Spacer size="0.5rem" />
       <HeaderBar />
       {children}
     </div>

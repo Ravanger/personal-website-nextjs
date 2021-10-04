@@ -21,7 +21,7 @@
     transition: inset 0.1s;
   }
 
-  &:hover {
+  &:active {
     background-color: darken($dark-accent02, 10);
 
     &:before {
