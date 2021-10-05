@@ -1,0 +1,11 @@
+@use "/src/styles/_colors" as *;
+
+.bottomNav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

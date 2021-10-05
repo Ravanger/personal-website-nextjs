@@ -1,0 +1,23 @@
+@use "/src/styles/fonts/_fonts" as *;
+@use "/src/styles/_colors" as *;
+
+.navItem {
+  cursor: pointer;
+  font-family: $font-body;
+  text-transform: uppercase;
+  color: $dark-text-dim;
+  padding: 1rem 0;
+  background-color: $dark-pattern;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active {
+  color: $dark-text;
+  background-color: $dark-bg-card;
+  border-top: solid 2px $dark-text;
+  padding: 1.5rem 0;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+}

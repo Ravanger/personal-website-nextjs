@@ -5,7 +5,7 @@
   align-items: center;
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 
 .logo {
@@ -25,7 +25,7 @@
   text-align: center;
   color: $dark-accent01;
   font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-  transition: color 0.1s;
+  transition: color 0.05s;
 
   &:active {
     color: darken($dark-accent01, 20);

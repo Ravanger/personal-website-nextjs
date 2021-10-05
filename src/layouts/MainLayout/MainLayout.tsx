@@ -1,13 +1,15 @@
-import TopNav from "components/common/TopNav"
-import Spacer from "components/common/Spacer"
 import styles from "./MainLayout.module.scss"
+import TopNav from "components/Layout/TopNav"
+import BottomNav from "components/Layout/BottomNav"
+import Spacer from "components/common/Spacer"
 
 const MainLayout: React.FC = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <Spacer size="0.5rem" />
+      <Spacer size="0.3rem" />
       <TopNav />
       {children}
+      <BottomNav />
     </div>
   )
 }
