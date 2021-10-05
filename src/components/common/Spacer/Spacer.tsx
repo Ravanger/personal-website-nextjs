@@ -6,13 +6,13 @@ const defaultProps: SpacerPropTypes = {
   axis: "VERTICAL",
 }
 
-const Spacer: React.FC<SpacerPropTypes> = (props) => {
-  const width = props.axis === "VERTICAL" ? null : props.size
-  const height = props.axis === "HORIZONTAL" ? null : props.size
+const Spacer: React.FC<SpacerPropTypes> = ({ axis, size, className }) => {
+  const width = axis === "VERTICAL" ? null : size
+  const height = axis === "HORIZONTAL" ? null : size
 
   return (
     <span
-      className={`${styles.spacer} ${props.className || ""}`}
+      className={`${styles.spacer} ${className || ""}`}
       style={{
         ...(width && { width: width }),
         ...(height && { height: height }),
