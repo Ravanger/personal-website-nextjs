@@ -1,6 +1,7 @@
 @use "/src/styles/_colors" as *;
 
 .header {
+  grid-column-start: span 4;
   display: grid;
   align-items: center;
   justify-items: center;
