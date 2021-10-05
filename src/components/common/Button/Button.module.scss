@@ -5,12 +5,11 @@
   background-color: $dark-accent02;
   color: $dark-text;
   font-family: $font-header;
-  border: 0;
   padding: 0.8rem 0;
   border-radius: 0.4rem;
   position: relative;
   cursor: pointer;
-  transition: background-color 0.1s;
+  transition: background-color 0.05s;
 
   &:before {
     content: "";
@@ -18,7 +17,7 @@
     inset: 0.25rem;
     border: $dark-text solid 0.18rem;
     border-radius: 0.4rem;
-    transition: inset 0.1s;
+    transition: inset 0.05s;
   }
 
   &:active {
