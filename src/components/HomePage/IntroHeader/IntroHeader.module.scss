@@ -1,0 +1,48 @@
+@use "/src/styles/fonts/fonts" as *;
+@use "/src/styles/colors" as *;
+
+.gridStretch {
+  grid-column: 1 / -1;
+}
+
+.introHeader {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: -100;
+  background-color: $dark-bg-card;
+  overflow: hidden;
+  padding-bottom: 2rem;
+  padding-top: 8rem;
+}
+
+.introContent {
+  max-width: 60rem;
+}
+
+.introText {
+  grid-column: 2 / span 3;
+  grid-row: 2 / 3;
+}
+
+.illustration {
+  grid-row: span 2 / 4;
+  grid-column: span 3 / -1;
+  z-index: -10;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: -2.6rem;
+}
+
+.boris {
+  font-family: $font-header;
+}
+
+.icanhelp {
+  font-family: $font-body;
+  font-size: 2rem;
+  line-height: 125%;
+}
