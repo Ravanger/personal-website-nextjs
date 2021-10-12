@@ -6,7 +6,7 @@ import Spacer from "components/common/Spacer"
 const MainLayout: React.FC = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <Spacer size="0.3rem" className={styles.gridArea} />
+      <Spacer size="0.3rem" />
       <TopNav />
       {children}
       <BottomNav />

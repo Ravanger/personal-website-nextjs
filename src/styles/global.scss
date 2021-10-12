@@ -10,10 +10,15 @@ html,
 
 body {
   background-color: $dark-bg;
+  overflow-x: hidden;
 }
 
 button {
   border: 0;
   padding: 0;
   background: none;
+}
+
+p {
+  margin: 0;
 }
