@@ -3,9 +3,7 @@ import { ButtonPropTypes } from "./Button.types"
 
 const Button: React.FC<ButtonPropTypes> = ({ children, className }) => {
   return (
-    <button className={`${styles.btn} ${className ? className : ""}`}>
-      {children}
-    </button>
+    <button className={`${styles.btn} ${className || ""}`}>{children}</button>
   )
 }
 
