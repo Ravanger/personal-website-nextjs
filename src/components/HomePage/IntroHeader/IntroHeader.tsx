@@ -7,7 +7,6 @@ const IntroHeader: React.FC = () => {
   return (
     <div className={styles.introHeader}>
       <ResponsiveGrid className={styles.introContent}>
-        {/* <Spacer size="10rem" className={styles.gridStretch} /> */}
         <div className={styles.introText}>
           <p className={styles.boris}>{"I'm Boris,"}</p>
           <Spacer size="1.5rem" />
