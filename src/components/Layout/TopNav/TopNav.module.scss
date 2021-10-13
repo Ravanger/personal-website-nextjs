@@ -1,6 +1,7 @@
 @use "/src/styles/_colors" as *;
 
 .header {
+  position: absolute;
   width: 100%;
   z-index: 100;
   padding: 0 1rem;
