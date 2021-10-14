@@ -1,6 +1,6 @@
-@use "fonts/_fonts" as *;
-@use "_colors" as *;
 @use "sass:color";
+@import "fonts/_fonts";
+@import "_colors";
 
 body,
 html,

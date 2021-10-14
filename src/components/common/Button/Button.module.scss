@@ -1,5 +1,5 @@
-@use "/src/styles/_colors" as *;
-@use "src/styles/fonts/_fonts" as *;
+@import "/src/styles/_colors";
+@import "src/styles/fonts/_fonts";
 
 .btn {
   background-color: $dark-accent02;

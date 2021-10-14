@@ -1,4 +1,4 @@
-@use "/src/styles/_colors" as *;
+@import "/src/styles/_colors";
 
 .header {
   position: absolute;
@@ -38,5 +38,5 @@
 .contact {
   font-size: clamp(0.8rem, 2.5vw, 1.2rem);
   width: clamp(6rem, 50%, 10rem);
-  justify-self: end;
+  justify-self: flex-end;
 }

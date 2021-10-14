@@ -1,5 +1,5 @@
-@use "/src/styles/fonts/_fonts" as *;
-@use "/src/styles/_colors" as *;
+@import "/src/styles/fonts/_fonts";
+@import "/src/styles/_colors";
 
 .navItem {
   cursor: pointer;
