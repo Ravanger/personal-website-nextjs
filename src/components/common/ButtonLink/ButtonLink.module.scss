@@ -5,11 +5,13 @@
   background-color: $dark-accent02;
   color: $dark-text;
   font-family: $font-header;
-  padding: 0.8rem 0;
+  text-align: center;
+  padding: 0.8rem;
   border-radius: 0.4rem;
   position: relative;
   cursor: pointer;
   transition: background-color 0.05s;
+  text-decoration: none;
 
   &:before {
     content: "";

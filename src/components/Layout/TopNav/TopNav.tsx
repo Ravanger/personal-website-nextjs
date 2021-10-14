@@ -1,7 +1,7 @@
 import styles from "./TopNav.module.scss"
 import { BsMoon } from "react-icons/bs"
 import Image from "next/image"
-import Button from "components/common/Button"
+import ButtonLink from "components/common/ButtonLink"
 
 const TopNav: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const TopNav: React.FC = () => {
       <button className={styles.themeSwitch}>
         <BsMoon />
       </button>
-      <Button className={styles.contact}>Contact</Button>
+      <ButtonLink className={styles.contact}>Contact</ButtonLink>
     </header>
   )
 }
