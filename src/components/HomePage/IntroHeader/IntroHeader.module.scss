@@ -1,15 +1,12 @@
 @import "/src/styles/fonts/fonts";
 @import "/src/styles/colors";
-
-.gridStretch {
-  grid-column: 1 / -1;
-}
+@import "/src/styles/breakpoints";
 
 .introHeader {
   top: 0;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   background-color: $dark-bg-card;
   overflow: hidden;
   padding-bottom: 2rem;
@@ -25,6 +22,14 @@
 .introText {
   grid-column: 2 / span 3;
   grid-row: 2 / 3;
+
+  @include tablet {
+    grid-column: 3 / span 5;
+  }
+
+  @include desktop {
+    grid-column: 5 / span 5;
+  }
 }
 
 .illustration {
@@ -35,14 +40,23 @@
   justify-content: flex-end;
   margin-bottom: -2.6rem;
   z-index: -10;
+
+  @include tablet {
+    grid-column: span 3 / -2;
+  }
+
+  @include desktop {
+    grid-column: span 4 / -4;
+  }
 }
 
 .boris {
   font-family: $font-header;
+  font-size: clamp(1rem, 3vw, 2.25rem);
 }
 
 .icanhelp {
   font-family: $font-body;
-  font-size: 2rem;
+  font-size: clamp(2rem, 3vw, 3rem);
   line-height: 125%;
 }

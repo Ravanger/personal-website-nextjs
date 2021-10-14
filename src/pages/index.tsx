@@ -11,8 +11,9 @@ const Home: NextPage = () => {
     <>
       <IntroHeader />
       <CTAButton />
-      <Spacer />
+      <Spacer size="2rem" />
       <ReachOutLink />
+      <Spacer size="2rem" />
       <SectionWithTitle title={AboutMe.title}>
         {AboutMe.content}
       </SectionWithTitle>

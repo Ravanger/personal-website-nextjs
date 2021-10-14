@@ -7,9 +7,11 @@ const MainLayout: React.FC = ({ children }) => {
   return (
     <div className={styles.layout}>
       <TopNav />
-      <Spacer size="6rem" />
-      {children}
-      <Spacer size="6rem" />
+      <main className={styles.content}>
+        <Spacer size="6rem" />
+        {children}
+        <Spacer size="6rem" />
+      </main>
       <BottomNav />
     </div>
   )

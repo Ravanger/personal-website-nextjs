@@ -1,8 +1,17 @@
 @import "/src/styles/fonts/fonts";
 @import "/src/styles/colors";
+@import "/src/styles/breakpoints";
+
+@mixin titlegrid {
+  grid-column: 2 / span 1;
+
+  @include tablet {
+    grid-column: 2 / span 2;
+  }
+}
 
 .title {
-  grid-column: 2 / span 1;
+  @include titlegrid;
   align-self: flex-start;
   writing-mode: tb;
   font-size: clamp(2.25rem, 8vw, 4rem);
@@ -18,7 +27,7 @@
 }
 
 .pattern {
-  grid-column: 2 / span 1;
+  @include titlegrid;
   content: "";
   position: absolute;
   display: flex;
@@ -38,4 +47,12 @@
   font-family: $font-body;
   line-height: 150%;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
+
+  @include tablet {
+    grid-column: 4 / span 5;
+  }
+
+  @include desktop {
+    grid-column: 4 / span 8;
+  }
 }
