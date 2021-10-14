@@ -1,0 +1,41 @@
+@import "/src/styles/fonts/fonts";
+@import "/src/styles/colors";
+
+.title {
+  grid-column: 2 / span 1;
+  align-self: flex-start;
+  writing-mode: tb;
+  font-size: clamp(2.25rem, 8vw, 4rem);
+  font-family: $font-header;
+  font-weight: 700;
+  position: relative;
+
+  span {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.pattern {
+  grid-column: 2 / span 1;
+  content: "";
+  position: absolute;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+  width: 100%;
+
+  svg * {
+    stroke: $dark-pattern;
+  }
+}
+
+.content {
+  grid-column: 3 / -2;
+  font-family: $font-body;
+  line-height: 150%;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}

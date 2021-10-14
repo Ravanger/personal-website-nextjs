@@ -1,4 +1,5 @@
 .responsiveGrid {
   display: grid;
   grid-template-columns: 1rem repeat(4, 1fr) 1rem;
+  position: relative;
 }
