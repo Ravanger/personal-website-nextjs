@@ -6,13 +6,13 @@ body,
 html,
 #__next {
   height: 100%;
+  min-width: 16rem;
 }
 
 body {
   background-color: $dark-bg;
   overflow-x: hidden;
   white-space: pre-line;
-  min-width: 16rem;
 }
 
 button {
