@@ -9,6 +9,7 @@ const MainLayout: React.FC = ({ children }) => {
       <TopNav />
       <Spacer size="6rem" />
       {children}
+      <Spacer size="6rem" />
       <BottomNav />
     </div>
   )
