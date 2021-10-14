@@ -15,13 +15,15 @@ const IntroHeader: React.FC = () => {
           </p>
         </div>
         <div className={styles.illustration}>
-          <Image
-            src="/images/me.svg"
-            alt="Logo"
-            width="339"
-            height="335"
-            layout="responsive"
-          />
+          <div>
+            <Image
+              src="/images/me.svg"
+              alt="Logo"
+              width="339"
+              height="335"
+              layout="responsive"
+            />
+          </div>
         </div>
       </ResponsiveGrid>
     </div>
