@@ -11,6 +11,8 @@ html,
 body {
   background-color: $dark-bg;
   overflow-x: hidden;
+  white-space: pre-line;
+  min-width: 16rem;
 }
 
 button {
