@@ -1,9 +1,14 @@
+@import "/src/styles/fonts/fonts";
 @import "/src/styles/colors";
 @import "/src/styles/breakpoints";
 
+.fullstretch {
+  grid-column: 1/-1;
+}
+
 .bg {
   background-color: $dark-bg-card;
-  padding-bottom: 12rem;
+  padding-bottom: 8rem;
   width: 100vw;
   isolation: isolate;
 }
@@ -48,5 +53,35 @@
 
   @include desktop {
     width: calc(33% - 1rem);
+  }
+}
+
+.skillsSection {
+  grid-column: 3 / -2;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3rem;
+  color: $dark-accent01;
+  gap: 2rem;
+  justify-content: flex-start;
+
+  @include tablet {
+    grid-column: 3 / -3;
+    justify-content: space-around;
+  }
+
+  @include desktop {
+    grid-column: 3 / -3;
+  }
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    font-family: $font-header;
+    font-size: clamp(0.5rem, 2.5vw, 1rem);
   }
 }

@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <SectionWithTitle title={AboutMe.title}>
         {AboutMe.content}
       </SectionWithTitle>
-      <Spacer size="2rem" />
+      <Spacer size="4rem" />
       <ClientsAndSkills />
     </>
   )
