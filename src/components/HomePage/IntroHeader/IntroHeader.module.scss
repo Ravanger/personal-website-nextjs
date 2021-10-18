@@ -18,11 +18,12 @@
 .introContent {
   max-width: 60rem;
   isolation: isolate;
+  grid-template-rows: 1fr 3fr 1fr;
 }
 
 .introText {
   grid-column: 2 / span 3;
-  grid-row: 2 / 3;
+  grid-row: 1 / span 2;
 
   @include tablet {
     grid-column: 3 / span 5;
