@@ -1,0 +1,12 @@
+@import "/src/styles/fonts/fonts";
+
+.iconWithText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    font-family: $font-header;
+    font-size: clamp(0.5rem, 2.5vw, 1rem);
+  }
+}

@@ -5,6 +5,7 @@ import ResponsiveGrid from "components/common/ResponsiveGrid"
 import PatternTitleText from "components/common/PatternTitleText/PatternTitleText"
 import Spacer from "components/common/Spacer"
 import Image from "next/image"
+import IconWithText from "components/common/IconWithText"
 
 const ClientsSection: React.FC = () => {
   return (
@@ -34,11 +35,11 @@ const SkillsSection: React.FC = () => {
     <div className={styles.skillsSection}>
       {Skills.map((skill) => {
         return (
-          <div key={skill.name} className={styles.skill}>
-            <skill.icon />
-            <Spacer size="0.25rem" />
-            <span>{skill.name}</span>
-          </div>
+          <IconWithText
+            key={skill.name}
+            skillIcon={<skill.icon />}
+            text={skill.name}
+          />
         )
       })}
     </div>
