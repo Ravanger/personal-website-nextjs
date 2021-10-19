@@ -28,7 +28,7 @@ const ImageGrid: React.FC<ImageGridPropTypes> = ({ artData }) => {
 
             case "VIDEO":
               return (
-                <video width="448" height="448" autoPlay loop muted>
+                <video autoPlay loop muted>
                   <source src={artPiece.image} type="video/mp4" />
                   {imageToRender}
                 </video>
@@ -41,7 +41,9 @@ const ImageGrid: React.FC<ImageGridPropTypes> = ({ artData }) => {
     )
   })
 
-  return <ResponsiveGrid>{renderArray}</ResponsiveGrid>
+  return (
+    <ResponsiveGrid className={styles.artGrid}>{renderArray}</ResponsiveGrid>
+  )
 }
 
 export default ImageGrid

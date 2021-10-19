@@ -1,22 +1,28 @@
 @import "/src/styles/breakpoints";
 
+.artGrid {
+  @include tablet {
+    gap: 1em;
+  }
+}
+
 .artImage {
-  grid-template-rows: repeat(auto, 1fr);
   grid-column: 1 / -1;
-  padding: 1em 0;
+  overflow: hidden;
 
   @include tablet {
     grid-column: 2 / -2;
-    padding: 1em;
   }
 
   @include desktop {
     grid-column: span 7;
+    max-height: 28rem;
+    gap: 1em;
   }
 
   video {
     width: 100%;
-    // height: 100%;
+    height: 100%;
     object-fit: cover;
   }
 }
