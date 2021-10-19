@@ -1,4 +1,9 @@
-const Clients = [
+interface ClientType {
+  name: string
+  img: string
+}
+
+const Clients: ClientType[] = [
   {
     name: "Alden",
     img: "/images/clients/alden.png",
