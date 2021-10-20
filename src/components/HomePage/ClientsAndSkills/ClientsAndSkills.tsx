@@ -33,15 +33,13 @@ const ClientsSection: React.FC = () => {
 const SkillsSection: React.FC = () => {
   return (
     <div className={styles.skillsSection}>
-      {Skills.map((skill) => {
-        return (
-          <IconWithText
-            key={skill.name}
-            skillIcon={<skill.icon />}
-            text={skill.name}
-          />
-        )
-      })}
+      {Skills.map((skill) => (
+        <IconWithText
+          key={skill.name}
+          skillIcon={<skill.icon />}
+          text={skill.name}
+        />
+      ))}
     </div>
   )
 }
