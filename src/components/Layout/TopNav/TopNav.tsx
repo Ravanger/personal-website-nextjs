@@ -3,8 +3,12 @@ import { BsMoon } from "react-icons/bs"
 import Image from "next/image"
 import ButtonLink from "components/common/ButtonLink"
 import Link from "next/link"
+import { useAtom } from "jotai"
+import { showContactFormAtom } from "src/atoms/global"
 
 const TopNav: React.FC = () => {
+  const [, setShowModal] = useAtom(showContactFormAtom)
+
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -21,7 +25,9 @@ const TopNav: React.FC = () => {
       <button className={styles.themeSwitch}>
         <BsMoon />
       </button>
-      <ButtonLink className={styles.contact}>Contact</ButtonLink>
+      <ButtonLink className={styles.contact} onClick={() => setShowModal(true)}>
+        Contact
+      </ButtonLink>
     </header>
   )
 }

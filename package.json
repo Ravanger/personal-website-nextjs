@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@plaiceholder/next": "^2.1.0",
+    "jotai": "^1.4.0",
     "modern-normalize": "^1.1.0",
     "next": "11.1.2",
     "plaiceholder": "^2.0.1",

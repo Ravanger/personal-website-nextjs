@@ -1,0 +1,30 @@
+@import "/src/styles/_colors";
+
+.socialLink {
+  text-decoration: none;
+  color: $dark-text;
+  position: relative;
+
+  .externalLink {
+    position: absolute;
+    right: -0.75rem;
+    top: -0.5rem;
+    display: none;
+  }
+
+  &:hover {
+    .externalLink {
+      display: block;
+    }
+  }
+}
+
+.screenReader {
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  word-wrap: normal;
+}
