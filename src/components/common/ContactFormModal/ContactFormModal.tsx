@@ -1,15 +1,15 @@
 import { useAtom } from "jotai"
 import { useEffect, useRef } from "react"
 import { showContactFormAtom } from "src/atoms/global"
-import ButtonLink from "../ButtonLink"
-import ResponsiveGrid from "../ResponsiveGrid"
-import Spacer from "../Spacer"
+import ButtonLink from "src/components/common/ButtonLink"
+import ResponsiveGrid from "src/components/common/ResponsiveGrid"
+import Spacer from "src/components/common/Spacer"
 import styles from "./ContactFormModal.module.scss"
 import { GrFormClose } from "react-icons/gr"
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa"
 import { AiFillInstagram } from "react-icons/ai"
 import { useClickOutside } from "src/util/clickHandlers"
-import ExternalLink from "../ExternalLink"
+import SocialsLink from "components/common/SocialsLink"
 
 const ContactFormModal: React.FC = () => {
   const [showModal, setShowModal] = useAtom(showContactFormAtom)
@@ -36,22 +36,22 @@ const ContactFormModal: React.FC = () => {
         </div>
         <Spacer className={styles.fullSpan} size="2rem" />
         <div className={styles.socials}>
-          <ExternalLink
+          <SocialsLink
             href="https://www.linkedin.com/in/brossovsky/"
             text="LinkedIn"
             skillIcon={<FaLinkedin />}
           />
-          <ExternalLink
+          <SocialsLink
             href="https://www.instagram.com/ravanger666/"
             text="Instagram"
             skillIcon={<AiFillInstagram />}
           />
-          <ExternalLink
+          <SocialsLink
             href="https://twitter.com/BRossovsky"
             text="Twitter"
             skillIcon={<FaTwitter />}
           />
-          <ExternalLink
+          <SocialsLink
             href="mailto:contact@borisr.dev"
             text="Email"
             skillIcon={<FaEnvelope />}

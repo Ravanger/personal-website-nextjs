@@ -1,7 +1,4 @@
-import { ReactElement } from "react"
-
 export interface ExternalLinkPropTypes {
+  className?: string
   href: string
-  text: string
-  skillIcon: ReactElement
 }

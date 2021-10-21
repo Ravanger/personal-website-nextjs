@@ -1,11 +1,11 @@
 @import "/src/styles/_colors";
 
-.socialLink {
+.externalLink {
   text-decoration: none;
   color: $dark-text;
   position: relative;
 
-  .externalLink {
+  .externalLinkIcon {
     position: absolute;
     right: -0.75rem;
     top: -0.5rem;
@@ -13,7 +13,7 @@
   }
 
   &:hover {
-    .externalLink {
+    .externalLinkIcon {
       display: block;
     }
   }
