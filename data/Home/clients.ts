@@ -1,6 +1,7 @@
-interface ClientType {
+export interface ClientType {
   name: string
   img: string
+  base64?: string
 }
 
 const Clients: ClientType[] = [
