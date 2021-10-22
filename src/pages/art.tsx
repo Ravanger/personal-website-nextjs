@@ -19,17 +19,7 @@ export const getStaticProps = async () => {
   try {
     const data = await Promise.all(
       artData.map(async (artpiece) => {
-        let imageToEncode = ""
-        switch (artpiece.type) {
-          case "STILL":
-            imageToEncode = artpiece.image
-            break
-          case "VIDEO":
-            imageToEncode = artpiece.video_still || ""
-            break
-        }
-
-        const { base64 } = await getPlaiceholder(imageToEncode)
+        const { base64 } = await getPlaiceholder(artpiece.image)
         artpiece.base64 = base64
         return artpiece
       })

@@ -8,7 +8,7 @@ const ImageGrid: React.FC<ImageGridPropTypes> = ({ artData }) => {
     const imageToRender = (
       <Image
         key={artPiece.image}
-        src={artPiece.type === "VIDEO" ? artPiece.video_still! : artPiece.image}
+        src={artPiece.image}
         alt={artPiece.name}
         width={1024}
         height={1024}
@@ -31,7 +31,7 @@ const ImageGrid: React.FC<ImageGridPropTypes> = ({ artData }) => {
                 <div className={styles.videoContainer}>
                   <div className={styles.placeholderImage}>{imageToRender}</div>
                   <video autoPlay loop muted>
-                    <source src={artPiece.image} type="video/mp4" />
+                    <source src={artPiece.video} type="video/mp4" />
                     {imageToRender}
                   </video>
                 </div>

@@ -4,43 +4,43 @@ export interface ArtType {
   image: string
   instagram: string
   base64?: string
-  video_still?: string
+  video?: string
 }
 
 const Art: ArtType[] = [
   {
     name: "Sour",
     type: "VIDEO",
-    image: "/art/inktober2021-sour.mp4",
-    video_still: "/art/inktober2021-sour_thumb.jpg",
+    video: "/art/inktober2021-sour.mp4",
+    image: "/art/inktober2021-sour_thumb.jpg",
     instagram: "https://www.instagram.com/p/CU6qp72AHbk/",
   },
   {
     name: "Watch",
     type: "VIDEO",
-    image: "/art/inktober2021-watch.mp4",
-    video_still: "/art/inktober2021-watch_thumb.jpg",
+    video: "/art/inktober2021-watch.mp4",
+    image: "/art/inktober2021-watch_thumb.jpg",
     instagram: "https://www.instagram.com/p/CUy3qEggMCj/",
   },
   {
     name: "Fan",
     type: "VIDEO",
-    image: "/art/inktober2021-fan.mp4",
-    video_still: "/art/inktober2021-fan_thumb.jpg",
+    video: "/art/inktober2021-fan.mp4",
+    image: "/art/inktober2021-fan_thumb.jpg",
     instagram: "https://www.instagram.com/p/CUwi6JngXUZ/",
   },
   {
     name: "Suit",
     type: "VIDEO",
-    image: "/art/inktober2021-suit.mp4",
-    video_still: "/art/inktober2021-suit_thumb.jpg",
+    video: "/art/inktober2021-suit.mp4",
+    image: "/art/inktober2021-suit_thumb.jpg",
     instagram: "https://www.instagram.com/p/CUjbITBg1XB/",
   },
   {
     name: "Crystal",
     type: "VIDEO",
-    image: "/art/inktober2021-crystal.mp4",
-    video_still: "/art/inktober2021-crystal_thumb.jpg",
+    video: "/art/inktober2021-crystal.mp4",
+    image: "/art/inktober2021-crystal_thumb.jpg",
     instagram: "https://www.instagram.com/p/CUhMpScjF-f/",
   },
   {
