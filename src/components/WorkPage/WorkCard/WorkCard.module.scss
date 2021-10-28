@@ -68,9 +68,18 @@
   font-family: $font-body;
   line-height: 150%;
   font-size: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+
+  @include tablet {
+    -webkit-line-clamp: 3;
+  }
 
   @include desktop {
     max-width: 25rem;
+    -webkit-line-clamp: 4;
   }
 }
 
