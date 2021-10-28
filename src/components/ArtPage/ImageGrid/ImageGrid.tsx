@@ -17,7 +17,6 @@ const ImageGrid: React.FC<ImageGridPropTypes> = ({ artData }) => {
         sizes="50vw,100vw"
         placeholder="blur"
         blurDataURL={artPiece.base64}
-        objectFit="cover"
       />
     )
 
