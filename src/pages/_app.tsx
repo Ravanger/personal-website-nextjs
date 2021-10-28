@@ -3,6 +3,8 @@ import "modern-normalize/modern-normalize.css"
 import "styles/global.scss"
 import MainLayout from "layouts/MainLayout"
 
+// TODO: Style scrollbar
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <MainLayout>
