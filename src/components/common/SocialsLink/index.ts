@@ -1,2 +1,1 @@
-import SocialsLink from "./SocialsLink"
-export default SocialsLink
+export { default } from "./SocialsLink"

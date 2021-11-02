@@ -1,2 +1,1 @@
-import ClientsAndSkills from "./ClientsAndSkills"
-export default ClientsAndSkills
+export { default } from "./ClientsAndSkills"

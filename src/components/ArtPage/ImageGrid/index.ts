@@ -1,2 +1,1 @@
-import ImageGrid from "./ImageGrid"
-export default ImageGrid
+export { default } from "./ImageGrid"

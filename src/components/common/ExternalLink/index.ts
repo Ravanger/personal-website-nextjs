@@ -1,2 +1,1 @@
-import ExternalLink from "./ExternalLink"
-export default ExternalLink
+export { default } from "./ExternalLink"

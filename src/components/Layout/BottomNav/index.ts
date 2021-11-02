@@ -1,2 +1,1 @@
-import BottomNav from "./BottomNav"
-export default BottomNav
+export { default } from "./BottomNav"

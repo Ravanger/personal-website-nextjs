@@ -1,2 +1,1 @@
-import IconWithText from "./IconWithText"
-export default IconWithText
+export { default } from "./IconWithText"

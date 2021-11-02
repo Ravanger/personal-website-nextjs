@@ -1,2 +1,1 @@
-import WorkCard from "./WorkCard"
-export default WorkCard
+export { default } from "./WorkCard"

@@ -1,2 +1,1 @@
-import CTAButton from "./CTAButton"
-export default CTAButton
+export { default } from "./CTAButton"

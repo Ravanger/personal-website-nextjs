@@ -1,2 +1,1 @@
-import SectionWithTitle from "./SectionWithTitle"
-export default SectionWithTitle
+export { default } from "./SectionWithTitle"

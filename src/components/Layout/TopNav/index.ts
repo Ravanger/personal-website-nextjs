@@ -1,2 +1,1 @@
-import TopNav from "./TopNav"
-export default TopNav
+export { default } from "./TopNav"

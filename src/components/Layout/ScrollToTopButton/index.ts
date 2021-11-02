@@ -1,2 +1,1 @@
-import ScrollToTopButton from "./ScrollToTopButton"
-export default ScrollToTopButton
+export { default } from "./ScrollToTopButton"

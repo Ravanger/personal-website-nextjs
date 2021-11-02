@@ -1,2 +1,1 @@
-import IntroHeader from "./IntroHeader"
-export default IntroHeader
+export { default } from "./IntroHeader"
