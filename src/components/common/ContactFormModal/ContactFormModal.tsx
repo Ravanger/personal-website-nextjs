@@ -8,7 +8,7 @@ import styles from "./ContactFormModal.module.scss"
 import { GrFormClose } from "react-icons/gr"
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa"
 import { AiFillInstagram } from "react-icons/ai"
-import { useClickOutside } from "src/util/clickHandlers"
+import { useClickOutside } from "src/hooks/useClickOutside"
 import SocialsLink from "components/common/SocialsLink"
 import { AnimatePresence, motion } from "framer-motion"
 
@@ -31,23 +31,20 @@ const ContactFormModal: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          key={"modalbg"}
-        >
+          key={"modalbg"}>
           <ResponsiveGrid
             className={styles.modal}
             forwardRef={modalRef}
             initial={{ y: -1000 }}
             animate={{ y: 0 }}
             exit={{ y: 1000 }}
-            key={"modalwindow"}
-          >
+            key={"modalwindow"}>
             <Spacer className={styles.fullSpan} />
             <div className={styles.closeButton}>
               <button
                 onClick={() => {
                   setShowModal(false)
-                }}
-              >
+                }}>
                 <GrFormClose />
               </button>
             </div>
@@ -86,8 +83,7 @@ const ContactFormModal: React.FC = () => {
             <ButtonLink
               type="submit"
               form="contactMe"
-              className={styles.submitButton}
-            >
+              className={styles.submitButton}>
               Send
             </ButtonLink>
             <Spacer className={styles.fullSpan} />
