@@ -5,9 +5,9 @@ siteUrl: www.arynn.ca
 sourceUrl: www.github.com
 mainImage: /work/next-js-project-demo/cover.png
 tags:
-  - Next.js
-  - Typescript
-  - Strapi
+- Next.js
+- Typescript
+- Strapi
 snippet:
 This will be a description snippet.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maecenas turpis nunc purus dapibus mi molestie.Condimentum ut odio condimentum diam magna lobortis. Woop woop woop.
 ---
