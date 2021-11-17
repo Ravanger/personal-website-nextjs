@@ -7,4 +7,5 @@ export interface WorkProjectFrontmatterType {
   snippet: string
   siteUrl?: string
   sourceUrl?: string
+  slug: string
 }

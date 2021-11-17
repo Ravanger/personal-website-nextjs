@@ -6,8 +6,6 @@ import remarkParseFrontmatter from "remark-parse-frontmatter"
 import remarkHtml from "remark-html"
 import { WorkProjectFrontmatterType } from "src/types/WorkProjectType.types"
 
-const WORK_DIR = join(process.cwd(), "data/Work")
-
 const remarkProcessor = remark()
   .use(remarkHtml)
   .use(remarkFrontmatter)
@@ -23,8 +21,7 @@ const remarkProcessor = remark()
   })
   .freeze()
 
-export const getMarkdownDataByFile = (file: string, dir: string) => {
-  const fullPath = join(dir, file)
+const processesMarkdown = (fullPath: string) => {
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const processedData = remarkProcessor.processSync(fileContents)
 
@@ -34,14 +31,42 @@ export const getMarkdownDataByFile = (file: string, dir: string) => {
   return { frontmatterData, htmlData: processedData.value }
 }
 
-export const getMarkdownFiles = (dir = WORK_DIR) => {
+export const getMarkdownDataByFile = (file: string, dir: string) => {
+  const fullPath = join(dir, file)
+  const data = processesMarkdown(fullPath)
+  data.frontmatterData.slug = file.replace(/\.md$/, "")
+  return data
+}
+
+export const getMarkdownDataBySlug = (slug: string, relativePath: string) => {
+  const fullPath = join(process.cwd(), relativePath, `${slug}.md`)
+  const data = processesMarkdown(fullPath)
+  data.frontmatterData.slug = slug
+
+  return data
+}
+
+export const getProcessedMarkdownFiles = (relativePath: string) => {
+  const dir = join(process.cwd(), relativePath)
+
   const files = fs
     .readdirSync(dir)
     .filter((file) => file.endsWith(".md"))
-    .map((file) => getMarkdownDataByFile(file, dir))
+    .map((file) => getMarkdownDataByFile(file, relativePath))
     .sort((file1, file2) => {
       return file1.frontmatterData.date > file2.frontmatterData.date ? -1 : 1
     })
+
+  return files
+}
+
+export const getFileSlugs = (relativePath: string) => {
+  const dir = join(process.cwd(), relativePath)
+
+  const files = fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => file.replace(/\.md$/, ""))
 
   return files
 }

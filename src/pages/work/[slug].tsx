@@ -1,49 +1,19 @@
 import { useRouter } from "next/router"
 import ErrorPage from "next/error"
-import { NextPage } from "next"
+import { GetStaticPaths, NextPage } from "next"
+import { getFileSlugs, getMarkdownDataBySlug } from "src/util/markdown"
+import InferNextPropsType from "infer-next-props-type"
 
-type Props = {
-  post: PostType
-  morePosts: PostType[]
-  preview?: boolean
-}
-
-const Post: NextPage<Props> = ({ post, morePosts, preview }) => {
+const WorkProject: NextPage<InferNextPropsType<typeof getStaticProps>> = ({
+  markdownData,
+}) => {
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+  if (router.isFallback) {
     return <ErrorPage statusCode={404} />
   }
-  return (
-    <Layout preview={preview}>
-      <Container>
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="mb-32">
-              <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-            </article>
-          </>
-        )}
-      </Container>
-    </Layout>
-  )
-}
 
-export default Post
+  return <>{JSON.stringify(markdownData)}</>
+}
 
 type Params = {
   params: {
@@ -51,39 +21,29 @@ type Params = {
   }
 }
 
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ])
-  const content = await markdownToHtml(post.content || "")
+export const getStaticProps = async ({ params }: Params) => {
+  const markdownData = getMarkdownDataBySlug(params.slug, "data/Work")
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      markdownData,
     },
   }
 }
 
-export const getStaticPaths = async () => {
-  const posts = getAllPosts(["slug"])
+export const getStaticPaths: GetStaticPaths = async () => {
+  const files = getFileSlugs("data/Work")
 
   return {
-    paths: posts.map((post) => {
+    paths: files.map((file) => {
       return {
         params: {
-          slug: post.slug,
+          slug: file,
         },
       }
     }),
     fallback: false,
   }
 }
+
+export default WorkProject
