@@ -19,6 +19,7 @@ const TopNav: React.FC = () => {
             width="64"
             height="64"
             layout="responsive"
+            priority
           />
         </a>
       </Link>
