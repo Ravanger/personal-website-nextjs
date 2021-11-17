@@ -1,14 +1,12 @@
 ---
-title: Next.js Project 1
-year: 2021
-date: 2021-03-16T05:35:07.322Z
-siteUrl: www.arynn.ca
-sourceUrl: www.github.com
-mainImage: /work/next-js-project-demo/cover.png
+title: Wordpress 1
+year: 2020
+date: 2020-02-16T05:35:07.322Z
+siteUrl: www.wordpress.org
+mainImage: /work/wordpress-project-demo/cover.png
 tags:
-  - Next.js
-  - Typescript
-  - Strapi
+  - Wordpress
+  - PHP
 snippet: This will be a description snippet.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maecenas turpis nunc purus dapibus mi molestie.Condimentum ut odio condimentum diam magna lobortis. Woop woop woop.
 ---
 
