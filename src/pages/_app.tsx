@@ -4,6 +4,7 @@ import "styles/global.scss"
 import MainLayout from "layouts/MainLayout"
 
 // TODO: Style scrollbar
+// TODO: Fix fonts
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
