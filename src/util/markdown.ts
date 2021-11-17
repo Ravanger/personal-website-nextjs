@@ -18,7 +18,7 @@ const remarkProcessor = remark()
       siteUrl: { type: "string" },
       sourceUrl: { type: "string" },
       mainImage: { type: "string", required: true },
-      tags: { type: "array", maxItems: 4 },
+      tags: { type: "array", maxItems: 4, required: true },
     },
   })
   .freeze()
