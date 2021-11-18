@@ -6,10 +6,8 @@ import WorkCard from "../WorkCard"
 const ProjectsList: React.FC<ProjectsListPropTypes> = ({ workData }) => {
   return (
     <ResponsiveGrid className={styles.container}>
-      {workData.map((workProject, index) => {
-        return (
-          <WorkCard key={workProject.title + index} projectData={workProject} />
-        )
+      {workData.map((workProject) => {
+        return <WorkCard key={workProject.slug} projectData={workProject} />
       })}
     </ResponsiveGrid>
   )

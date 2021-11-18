@@ -60,6 +60,12 @@ export const getProcessedMarkdownFiles = (relativePath: string) => {
   return files
 }
 
+export const getAllFrontmatterData = (relativePath: string) => {
+  return getProcessedMarkdownFiles(relativePath).map(
+    (file) => file.frontmatterData
+  )
+}
+
 export const getFileSlugs = (relativePath: string) => {
   const dir = join(process.cwd(), relativePath)
 

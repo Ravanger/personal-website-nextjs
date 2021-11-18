@@ -1,5 +1,5 @@
-import { WorkType } from "data/Work/work"
+import { WorkProjectFrontmatterType } from "src/types/WorkProjectType.types"
 
 export interface ProjectsListPropTypes {
-  workData: WorkType[]
+  workData: WorkProjectFrontmatterType[]
 }
