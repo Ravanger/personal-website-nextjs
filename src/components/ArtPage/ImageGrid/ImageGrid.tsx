@@ -3,8 +3,6 @@ import ResponsiveGrid from "components/common/ResponsiveGrid"
 import { ImageGridPropTypes } from "./ImageGrid.types"
 import Image from "next/image"
 
-// TODO: Hover boxes
-
 const ImageGrid: React.FC<ImageGridPropTypes> = ({ artData }) => {
   const renderArray = artData.map((artPiece) => {
     const imageToRender = (

@@ -5,6 +5,8 @@ import MainLayout from "layouts/MainLayout"
 
 // TODO: Style scrollbar
 // TODO: Fix fonts
+// TODO: Fix navbar on project page
+// TODO: Hover boxes on image grid
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
