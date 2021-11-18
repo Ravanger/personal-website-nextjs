@@ -7,7 +7,9 @@ mainImage: /work/wordpress-project-demo/cover.png
 tags:
   - Wordpress
   - PHP
-snippet: This will be a description snippet.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maecenas turpis nunc purus dapibus mi molestie.Condimentum ut odio condimentum diam magna lobortis. Woop woop woop.
+snippet: |
+  This will be a description snippet.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maecenas turpis nunc purus dapibus mi molestie. Condimentum ut odio condimentum diam magna lobortis. Woop woop woop.
 ---
 
 This is going to be the long description. Lorem ipsum dolor sit amet,

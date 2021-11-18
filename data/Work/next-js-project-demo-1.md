@@ -1,5 +1,5 @@
 ---
-title: Next.js Project 1
+title: Next.js Project 1 - The Test
 year: 2021
 date: 2021-03-16T05:35:07.322Z
 siteUrl: www.arynn.ca
@@ -9,7 +9,9 @@ tags:
   - Next.js
   - Typescript
   - Strapi
-snippet: This will be a description snippet.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maecenas turpis nunc purus dapibus mi molestie.Condimentum ut odio condimentum diam magna lobortis. Woop woop woop.
+snippet: |
+  This will be a description snippet.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maecenas turpis nunc purus dapibus mi molestie. Condimentum ut odio condimentum diam magna lobortis. Woop woop woop.
 ---
 
 This is going to be the long description. Lorem ipsum dolor sit amet,
