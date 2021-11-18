@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next-remote-watch data",
+    "next-dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -31,6 +32,7 @@
     "@types/react": "^17.0.25",
     "eslint": "^7",
     "eslint-config-next": "^12.0.2",
-    "infer-next-props-type": "^0.0.4"
+    "infer-next-props-type": "^0.0.4",
+    "next-remote-watch": "^1.0.0"
   }
 }
