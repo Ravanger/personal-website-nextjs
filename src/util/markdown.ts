@@ -19,9 +19,8 @@ const remarkProcessor = remark()
       tags: { type: "array", maxItems: 4, required: true },
     },
   })
-  .freeze()
 
-const processesMarkdown = (fullPath: string) => {
+const processMarkdown = (fullPath: string) => {
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const processedData = remarkProcessor.processSync(fileContents)
 
@@ -33,14 +32,14 @@ const processesMarkdown = (fullPath: string) => {
 
 export const getMarkdownDataByFile = (file: string, dir: string) => {
   const fullPath = join(dir, file)
-  const data = processesMarkdown(fullPath)
+  const data = processMarkdown(fullPath)
   data.frontmatterData.slug = file.replace(/\.md$/, "")
   return data
 }
 
 export const getMarkdownDataBySlug = (slug: string, relativePath: string) => {
   const fullPath = join(process.cwd(), relativePath, `${slug}.md`)
-  const data = processesMarkdown(fullPath)
+  const data = processMarkdown(fullPath)
   data.frontmatterData.slug = slug
 
   return data
