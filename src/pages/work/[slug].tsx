@@ -3,6 +3,7 @@ import ErrorPage from "next/error"
 import { GetStaticPaths, NextPage } from "next"
 import { getFileSlugs, getMarkdownDataBySlug } from "src/util/markdown"
 import InferNextPropsType from "infer-next-props-type"
+import ProjectPage from "components/WorkPage/ProjectPage"
 
 const WorkProject: NextPage<InferNextPropsType<typeof getStaticProps>> = ({
   markdownData,
@@ -12,7 +13,7 @@ const WorkProject: NextPage<InferNextPropsType<typeof getStaticProps>> = ({
     return <ErrorPage statusCode={404} />
   }
 
-  return <>{JSON.stringify(markdownData)}</>
+  return <ProjectPage markdownData={markdownData} />
 }
 
 type Params = {
