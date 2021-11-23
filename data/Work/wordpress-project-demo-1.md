@@ -2,7 +2,7 @@
 title: Wordpress 1
 year: 2020
 date: 2020-03-16T05:35:07.322Z
-siteUrl: www.wordpress.org
+siteUrl: https://www.wordpress.org
 mainImage: /work/wordpress-project-demo/cover.png
 tags:
   - Wordpress

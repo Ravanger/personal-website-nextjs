@@ -2,8 +2,8 @@
 title: Next.js Project 1 - The Test
 year: 2021
 date: 2021-03-16T05:35:07.322Z
-siteUrl: www.arynn.ca
-sourceUrl: www.github.com
+siteUrl: https://www.arynn.ca
+sourceUrl: https://www.github.com
 mainImage: /work/next-js-project-demo/cover.png
 tags:
   - Next.js
