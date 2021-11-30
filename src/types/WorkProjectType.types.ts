@@ -9,3 +9,8 @@ export interface WorkProjectFrontmatterType {
   sourceUrl?: string
   slug: string
 }
+
+export interface WorkProjectType {
+  markdown: string
+  frontmatter: WorkProjectFrontmatterType
+}

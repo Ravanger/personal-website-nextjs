@@ -1,7 +1,10 @@
 import fs from "fs"
 import { join } from "path"
 import matter from "gray-matter"
-import { WorkProjectFrontmatterType } from "src/types/WorkProjectType.types"
+import {
+  WorkProjectFrontmatterType,
+  WorkProjectType,
+} from "src/types/WorkProjectType.types"
 
 const getFileSlug = (file: string) => {
   return file.replace(/\.md$/, "")
@@ -36,7 +39,10 @@ const mapFrontmatterData = (
   return frontmatter
 }
 
-export const getMarkdownDataBySlug = (slug: string, relativePath: string) => {
+export const getMarkdownDataBySlug = (
+  slug: string,
+  relativePath: string
+): WorkProjectType => {
   const fullPath = join(process.cwd(), relativePath, `${slug}.md`)
   const data = getFileContents(fullPath)
   const { markdown, rawFrontmatter } = separateMarkdownData(data)

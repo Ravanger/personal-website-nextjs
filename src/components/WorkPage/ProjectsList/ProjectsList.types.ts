@@ -1,8 +1,5 @@
-import { WorkProjectFrontmatterType } from "src/types/WorkProjectType.types"
+import { WorkProjectType } from "src/types/WorkProjectType.types"
 
 export interface ProjectsListPropTypes {
-  workData: {
-    markdown: string
-    frontmatter: WorkProjectFrontmatterType
-  }[]
+  workData: WorkProjectType[]
 }
