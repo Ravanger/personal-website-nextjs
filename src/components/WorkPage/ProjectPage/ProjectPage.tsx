@@ -3,6 +3,8 @@ import { ProjectPagePropTypes } from "./ProjectPage.types"
 import ResponsiveGrid from "components/common/ResponsiveGrid"
 import PatternTitleText from "components/common/PatternTitleText"
 import ReactMarkdown from "react-markdown"
+import Image from "next/image"
+import remarkUnwrapImages from "remark-unwrap-images"
 
 const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
   return (
@@ -35,7 +37,23 @@ const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
       <ResponsiveGrid>
         <PatternTitleText title={markdownData.frontmatter.title} />
         <article>
-          <ReactMarkdown>{markdownData.markdown}</ReactMarkdown>)
+          <ReactMarkdown
+            remarkPlugins={[remarkUnwrapImages]}
+            components={{
+              img: (node) => (
+                <></>
+                // <div>
+                //   <Image
+                //     src={node.src || "/images/missing.jpg"}
+                //     alt={node.alt || ""}
+                //     layout={"fill"}
+                //   />
+                // </div>
+              ),
+            }}>
+            {markdownData.markdown}
+          </ReactMarkdown>
+          )
         </article>
       </ResponsiveGrid>
     </>
