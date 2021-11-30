@@ -7,7 +7,12 @@ const ProjectsList: React.FC<ProjectsListPropTypes> = ({ workData }) => {
   return (
     <ResponsiveGrid className={styles.container}>
       {workData.map((workProject) => {
-        return <WorkCard key={workProject.slug} projectData={workProject} />
+        return (
+          <WorkCard
+            key={workProject.frontmatter.slug}
+            frontmatter={workProject.frontmatter}
+          />
+        )
       })}
     </ResponsiveGrid>
   )

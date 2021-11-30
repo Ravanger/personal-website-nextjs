@@ -14,7 +14,9 @@ snippet: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maecenas turpis nunc purus dapibus mi molestie. Condimentum ut odio condimentum diam magna lobortis. Woop woop woop.
 ---
 
-This is going to be the long description. Lorem ipsum dolor sit amet,
+## This is going to be the long description.
+
+Lorem ipsum dolor sit amet,
 consectetur adipiscing elit. Facilisis egestas adipiscing felis neque,
 sed donec.
 

@@ -1,7 +1,8 @@
 import type { InferGetStaticPropsType, NextPage } from "next"
 import ProjectsList from "components/WorkPage/ProjectsList"
 import Spacer from "components/common/Spacer"
-import { getAllFrontmatterData } from "src/util/markdown"
+import { getSortedMarkdownData } from "src/util/markdown"
+import { ROUTES } from "src/config/routes"
 
 const Work: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   workProjects,
@@ -15,7 +16,7 @@ const Work: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }
 
 export const getStaticProps = async () => {
-  const workProjects = getAllFrontmatterData("data/Work")
+  const workProjects = getSortedMarkdownData(ROUTES.work)
 
   return {
     props: {

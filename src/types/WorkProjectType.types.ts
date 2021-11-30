@@ -1,7 +1,7 @@
 export interface WorkProjectFrontmatterType {
   title: string
   year: number
-  date: Date
+  date: string
   mainImage: string
   tags: string[]
   snippet: string

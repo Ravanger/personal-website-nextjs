@@ -1,77 +1,75 @@
 import fs from "fs"
 import { join } from "path"
-import { remark } from "remark"
-import remarkFrontmatter from "remark-frontmatter"
-import remarkParseFrontmatter from "remark-parse-frontmatter"
-import remarkHtml from "remark-html"
+import matter from "gray-matter"
 import { WorkProjectFrontmatterType } from "src/types/WorkProjectType.types"
 
-const remarkProcessor = remark()
-  .use(remarkHtml)
-  .use(remarkFrontmatter)
-  .use(remarkParseFrontmatter, {
-    properties: {
-      title: { type: "string", required: true },
-      year: { type: "number", required: true },
-      siteUrl: { type: "string" },
-      sourceUrl: { type: "string" },
-      mainImage: { type: "string", required: true },
-      tags: { type: "array", maxItems: 4, required: true },
-    },
-  })
-
-const processMarkdown = (fullPath: string) => {
-  const fileContents = fs.readFileSync(fullPath, "utf8")
-  const processedData = remarkProcessor.processSync(fileContents)
-
-  const frontmatterData: WorkProjectFrontmatterType = processedData.data
-    .frontmatter as WorkProjectFrontmatterType
-
-  return { frontmatterData, htmlData: processedData.value }
+const getFileSlug = (file: string) => {
+  return file.replace(/\.md$/, "")
 }
 
-export const getMarkdownDataByFile = (file: string, dir: string) => {
-  const fullPath = join(dir, file)
-  const data = processMarkdown(fullPath)
-  data.frontmatterData.slug = file.replace(/\.md$/, "")
-  return data
+const getFileContents = (fullPath: string) => {
+  const fileContents = fs.readFileSync(fullPath, "utf8")
+  return fileContents
+}
+
+const separateMarkdownData = (rawData: string) => {
+  const { content, data } = matter(rawData)
+  return { markdown: content, rawFrontmatter: data }
+}
+
+const mapFrontmatterData = (
+  rawFrontmatter: { [key: string]: any },
+  slug: string
+) => {
+  const frontmatter: WorkProjectFrontmatterType = {
+    title: rawFrontmatter.title || "Title",
+    year: rawFrontmatter.year || new Date().getFullYear(),
+    date: rawFrontmatter.date.toString() || new Date().toISOString(),
+    siteUrl: rawFrontmatter.siteUrl || null,
+    sourceUrl: rawFrontmatter.sourceUrl || null,
+    mainImage: rawFrontmatter.mainImage || "/images/missing.jpg",
+    tags: rawFrontmatter.tags || [],
+    snippet: rawFrontmatter.snippet || "Project snippet",
+    slug,
+  }
+
+  return frontmatter
 }
 
 export const getMarkdownDataBySlug = (slug: string, relativePath: string) => {
   const fullPath = join(process.cwd(), relativePath, `${slug}.md`)
-  const data = processMarkdown(fullPath)
-  data.frontmatterData.slug = slug
+  const data = getFileContents(fullPath)
+  const { markdown, rawFrontmatter } = separateMarkdownData(data)
+  const frontmatter = mapFrontmatterData(rawFrontmatter, slug)
 
-  return data
+  return { markdown, frontmatter }
 }
 
-export const getProcessedMarkdownFiles = (relativePath: string) => {
+export const getAllMarkdownFiles = (relativePath: string) => {
   const dir = join(process.cwd(), relativePath)
-
-  const files = fs
-    .readdirSync(dir)
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => getMarkdownDataByFile(file, relativePath))
-    .sort((file1, file2) => {
-      return file1.frontmatterData.date > file2.frontmatterData.date ? -1 : 1
-    })
+  const files = fs.readdirSync(dir).filter((file) => file.endsWith(".md"))
 
   return files
 }
 
-export const getAllFrontmatterData = (relativePath: string) => {
-  return getProcessedMarkdownFiles(relativePath).map(
-    (file) => file.frontmatterData
-  )
+export const getSortedMarkdownData = (relativePath: string) => {
+  const files = getAllMarkdownFiles(relativePath)
+  const processedFiles = files
+    .map((file) => {
+      return getMarkdownDataBySlug(getFileSlug(file), relativePath)
+    })
+    .sort((file1, file2) => {
+      return new Date(file1.frontmatter.date) > new Date(file2.frontmatter.date)
+        ? -1
+        : 1
+    })
+  return processedFiles
 }
 
-export const getFileSlugs = (relativePath: string) => {
-  const dir = join(process.cwd(), relativePath)
-
-  const files = fs
-    .readdirSync(dir)
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => file.replace(/\.md$/, ""))
+export const getAllMarkdownFileSlugs = (relativePath: string) => {
+  const files = getAllMarkdownFiles(relativePath).map((file) => {
+    return getFileSlug(file)
+  })
 
   return files
 }
