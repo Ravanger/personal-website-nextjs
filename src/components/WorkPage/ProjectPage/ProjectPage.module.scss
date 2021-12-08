@@ -1,0 +1,75 @@
+@import "/src/styles/breakpoints";
+@import "/src/styles/colors";
+
+.projectLinksNav {
+  grid-column: 2 / -2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  * {
+    flex: 1;
+  }
+
+  :nth-child(1) {
+    text-align: left;
+  }
+
+  :nth-child(2) {
+    text-align: center;
+  }
+
+  :nth-child(3) {
+    text-align: right;
+  }
+
+  @include tablet {
+    grid-column: 3 / -3;
+  }
+}
+
+.backButton {
+  color: $dark-bg;
+  background-color: $dark-text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0.5em;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.projectTags {
+  grid-column: 2 / -2;
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    grid-column: 4 / -4;
+  }
+
+  @include desktop {
+    grid-column: 5 / -5;
+  }
+}
+
+.articleTitle {
+  grid-column: 1 / span 2;
+
+  @include tablet {
+    grid-column: 1 / span 3;
+  }
+}
+
+.articleContent {
+  grid-column: 3 / -2;
+
+  @include tablet {
+    grid-column: 4 / -3;
+  }
+
+  @include desktop {
+    grid-column: 4 / -4;
+  }
+}

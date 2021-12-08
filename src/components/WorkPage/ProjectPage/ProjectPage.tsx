@@ -5,38 +5,61 @@ import PatternTitleText from "components/common/PatternTitleText"
 import ReactMarkdown from "react-markdown"
 import Image from "next/image"
 import remarkUnwrapImages from "remark-unwrap-images"
+import styles from "./ProjectPage.module.scss"
 
 const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
   return (
     <>
-      <div>
-        <button>{"<"}</button>
-        {markdownData.frontmatter.siteUrl && (
-          <ExternalLink href={markdownData.frontmatter.siteUrl}>
-            {"Live site"}
-          </ExternalLink>
-        )}
-        {markdownData.frontmatter.sourceUrl && (
-          <ExternalLink href={markdownData.frontmatter.sourceUrl}>
-            {"Source"}
-          </ExternalLink>
-        )}
-      </div>
-      {/* <div>
+      <ResponsiveGrid>
+        <nav className={styles.projectLinksNav}>
+          <div>
+            <button className={styles.backButton}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24">
+                <g transform="rotate(-90 11 13)">
+                  <path d="M10.285 3.858c.777-1.294 2.653-1.294 3.43 0l8.468 14.113c.8 1.333-.16 3.029-1.715 3.029H3.532c-1.554 0-2.514-1.696-1.715-3.029l8.468-14.113z" />
+                </g>
+              </svg>
+            </button>
+          </div>
+          {markdownData.frontmatter.siteUrl ? (
+            <ExternalLink href={markdownData.frontmatter.siteUrl}>
+              {"Live site"}
+            </ExternalLink>
+          ) : (
+            <div />
+          )}
+          {markdownData.frontmatter.sourceUrl ? (
+            <ExternalLink href={markdownData.frontmatter.sourceUrl}>
+              {"Source"}
+            </ExternalLink>
+          ) : (
+            <div />
+          )}
+        </nav>
+        {/* <div>
         <Image
           src={markdownData.frontmatter.mainImage}
           alt={markdownData.frontmatter.title}
           layout="fill"
         />
       </div> */}
-      <div>
-        {markdownData.frontmatter.tags.map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
-      </div>
-      <ResponsiveGrid>
-        <PatternTitleText title={markdownData.frontmatter.title} />
-        <article>
+        <div className={styles.projectTags}>
+          {markdownData.frontmatter.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+        <PatternTitleText
+          title={markdownData.frontmatter.title}
+          className={styles.articleTitle}
+        />
+        <article className={styles.articleContent}>
           <ReactMarkdown
             remarkPlugins={[remarkUnwrapImages]}
             components={{
@@ -53,7 +76,6 @@ const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
             }}>
             {markdownData.markdown}
           </ReactMarkdown>
-          )
         </article>
       </ResponsiveGrid>
     </>
