@@ -8,6 +8,7 @@ import {
 import InferNextPropsType from "infer-next-props-type"
 import ProjectPage from "components/WorkPage/ProjectPage"
 import { ROUTES } from "src/config/routes"
+import Spacer from "components/common/Spacer"
 
 const WorkProject: NextPage<InferNextPropsType<typeof getStaticProps>> = ({
   markdownData,
@@ -17,7 +18,12 @@ const WorkProject: NextPage<InferNextPropsType<typeof getStaticProps>> = ({
     return <ErrorPage statusCode={404} />
   }
 
-  return <ProjectPage markdownData={markdownData} />
+  return (
+    <>
+      <ProjectPage markdownData={markdownData} />
+      <Spacer size="6rem" />
+    </>
+  )
 }
 
 type Params = {
