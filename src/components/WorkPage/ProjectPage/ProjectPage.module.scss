@@ -41,6 +41,35 @@
   cursor: pointer;
 }
 
+.mainImage {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 24rem;
+
+  @include tablet {
+    grid-column: 2 / -2;
+  }
+
+  @include desktop {
+    grid-column: 3 / -3;
+  }
+}
+
+.inlineImage {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 24rem;
+  margin: 1rem 0;
+
+  @include tablet {
+    grid-column: 2 / -2;
+  }
+
+  @include desktop {
+    grid-column: 4 / -4;
+  }
+}
+
 .projectTags {
   grid-column: 2 / -2;
   display: flex;

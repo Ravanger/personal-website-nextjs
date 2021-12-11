@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown"
 import Image from "next/image"
 import remarkUnwrapImages from "remark-unwrap-images"
 import styles from "./ProjectPage.module.scss"
+import Spacer from "components/common/Spacer"
 
 const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
   return (
@@ -42,18 +43,21 @@ const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
           <div />
         )}
       </nav>
-      {/* <div>
+      <Spacer size="2rem" />
+      <div className={styles.mainImage}>
         <Image
           src={markdownData.frontmatter.mainImage}
           alt={markdownData.frontmatter.title}
           layout="fill"
         />
-      </div> */}
+      </div>
+      <Spacer size="2rem" />
       <div className={styles.projectTags}>
         {markdownData.frontmatter.tags.map((tag) => (
           <span key={tag}>{tag}</span>
         ))}
       </div>
+      <Spacer size="2rem" />
       <div className={styles.articleTitle}>
         <span>{markdownData.frontmatter.year}</span>
         <PatternTitleText title={markdownData.frontmatter.title} />
@@ -63,14 +67,13 @@ const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
           remarkPlugins={[remarkUnwrapImages]}
           components={{
             img: (node) => (
-              <></>
-              // <div>
-              //   <Image
-              //     src={node.src || "/images/missing.jpg"}
-              //     alt={node.alt || ""}
-              //     layout={"fill"}
-              //   />
-              // </div>
+              <div className={styles.inlineImage}>
+                <Image
+                  src={node.src || "/images/missing.jpg"}
+                  alt={node.alt || ""}
+                  layout={"fill"}
+                />
+              </div>
             ),
           }}>
           {markdownData.markdown}
