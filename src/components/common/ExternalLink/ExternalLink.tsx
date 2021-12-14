@@ -12,10 +12,9 @@ const ExternalLink: React.FC<ExternalLinkPropTypes> = ({
       className={`${styles.externalLink} ${className || ""}`}
       href={href}
       target="_blank"
-      rel="noreferrer"
-    >
-      <FaExternalLinkAlt size="0.25em" className={styles.externalLinkIcon} />
+      rel="noreferrer">
       {children}
+      <FaExternalLinkAlt className={styles.externalLinkIcon} />
       <span className={styles.screenReader}>{"opens a new window"}</span>
     </a>
   )

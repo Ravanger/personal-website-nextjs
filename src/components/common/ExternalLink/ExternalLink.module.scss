@@ -6,15 +6,14 @@
   position: relative;
 
   .externalLinkIcon {
+    font-size: 0.5em;
     position: absolute;
-    right: -0.75rem;
-    top: -0.5rem;
     display: none;
   }
 
   &:hover {
     .externalLinkIcon {
-      display: block;
+      display: inline;
     }
   }
 }
