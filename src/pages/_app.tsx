@@ -6,7 +6,7 @@ import MainLayout from "layouts/MainLayout"
 // TODO: Style scrollbar
 // TODO: Hover boxes on image grid
 // TODO: Work page images blur-up
-// TODO: Work card constant height/trunc. titles
+// TODO: Make back button work on Project Page
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
