@@ -6,6 +6,7 @@ import MainLayout from "layouts/MainLayout"
 // TODO: Style scrollbar
 // TODO: Hover boxes on image grid
 // TODO: Work page images blur-up
+// TODO: Fix external link icon in Contact Box
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
