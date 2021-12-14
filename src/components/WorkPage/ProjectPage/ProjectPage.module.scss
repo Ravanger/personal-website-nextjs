@@ -2,14 +2,44 @@
 @import "/src/styles/colors";
 @import "/src/styles/fonts/fonts";
 
+.content {
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-family: $font-body;
+  }
+
+  h2 {
+    font-family: $font-header;
+  }
+
+  * {
+    grid-column: 3 / -2;
+    white-space: normal;
+    line-height: 150%;
+
+    @include tablet {
+      grid-column: 4 / -3;
+    }
+
+    @include desktop {
+      grid-column: 4 / -4;
+    }
+  }
+}
+
 .projectLinksNav {
   grid-column: 2 / -2;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: $font-header;
 
   * {
     flex: 1;
+  }
+
+  a {
+    text-decoration: underline;
   }
 
   :nth-child(1) {
@@ -56,13 +86,12 @@
 }
 
 .inlineImage {
-  grid-column: 1 / -1;
   position: relative;
   height: 24rem;
   margin: 1rem 0;
 
   @include tablet {
-    grid-column: 2 / -2;
+    grid-column: 4 / -2;
   }
 
   @include desktop {
@@ -74,6 +103,9 @@
   grid-column: 2 / -2;
   display: flex;
   justify-content: space-between;
+  font-family: $font-header;
+  color: $dark-text-dim;
+  font-size: 0.8rem;
 
   @include tablet {
     grid-column: 4 / -4;
@@ -86,38 +118,22 @@
 
 .articleTitle {
   grid-column: 1 / span 2;
+  grid-row: 7 / span 99;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: $font-header;
 
   h2 {
     font-size: clamp(2.25rem, 8vw, 3rem);
   }
 
+  span {
+    color: $dark-text-dim;
+    font-size: 0.8rem;
+  }
+
   @include tablet {
     grid-column: 1 / span 3;
-  }
-}
-
-.articleContent {
-  grid-column: 3 / -2;
-  grid-row: span 2;
-
-  @include tablet {
-    grid-column: 4 / -3;
-  }
-
-  @include desktop {
-    grid-column: 4 / -4;
-  }
-
-  * {
-    font-family: $font-header;
-    line-height: 150%;
-  }
-
-  p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    white-space: normal;
   }
 }

@@ -10,7 +10,7 @@ import Spacer from "components/common/Spacer"
 
 const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
   return (
-    <ResponsiveGrid>
+    <ResponsiveGrid className={styles.content}>
       <nav className={styles.projectLinksNav}>
         <div>
           <button className={styles.backButton}>
@@ -62,23 +62,21 @@ const ProjectPage: React.FC<ProjectPagePropTypes> = ({ markdownData }) => {
         <span>{markdownData.frontmatter.year}</span>
         <PatternTitleText title={markdownData.frontmatter.title} />
       </div>
-      <article className={styles.articleContent}>
-        <ReactMarkdown
-          remarkPlugins={[remarkUnwrapImages]}
-          components={{
-            img: (node) => (
-              <div className={styles.inlineImage}>
-                <Image
-                  src={node.src || "/images/missing.jpg"}
-                  alt={node.alt || ""}
-                  layout={"fill"}
-                />
-              </div>
-            ),
-          }}>
-          {markdownData.markdown}
-        </ReactMarkdown>
-      </article>
+      <ReactMarkdown
+        remarkPlugins={[remarkUnwrapImages]}
+        components={{
+          img: (node) => (
+            <div className={styles.inlineImage}>
+              <Image
+                src={node.src || "/images/missing.jpg"}
+                alt={node.alt || ""}
+                layout={"fill"}
+              />
+            </div>
+          ),
+        }}>
+        {markdownData.markdown}
+      </ReactMarkdown>
     </ResponsiveGrid>
   )
 }
