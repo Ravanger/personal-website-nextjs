@@ -4,7 +4,6 @@ import "styles/global.scss"
 import MainLayout from "layouts/MainLayout"
 
 // TODO: Style scrollbar
-// TODO: Fix fonts
 // TODO: Hover boxes on image grid
 // TODO: Work page images blur-up
 
