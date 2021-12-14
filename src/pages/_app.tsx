@@ -6,7 +6,6 @@ import MainLayout from "layouts/MainLayout"
 // TODO: Style scrollbar
 // TODO: Hover boxes on image grid
 // TODO: Work page images blur-up
-// TODO: Make back button work on Project Page
 // TODO: Main menu - Work subpage
 // TODO: Light mode
 
