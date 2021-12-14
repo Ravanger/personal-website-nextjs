@@ -119,12 +119,13 @@ const PatternTitleText: React.FC<PatternTitleTextPropTypes> = ({
 
   return (
     <div
-      className={`${styles.title} ${
+      className={`${styles.outerContainer} ${
         alignDir === "LEFT" ? styles.left : styles.right
-      } ${className || ""}`}
-    >
-      <h2>{title}</h2>
-      <div className={styles.pattern}>{pattern}</div>
+      } ${className || ""}`}>
+      <div className={styles.innerContainer}>
+        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.pattern}>{pattern}</div>
+      </div>
     </div>
   )
 }

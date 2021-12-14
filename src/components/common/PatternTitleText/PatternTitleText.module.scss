@@ -18,21 +18,24 @@
   }
 }
 
-.title {
+.outerContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.innerContainer {
   writing-mode: tb;
-  color: $dark-accent01;
+  position: relative;
   font-size: clamp(2.25rem, 8vw, 4rem);
+}
+
+.title {
+  font-size: 1em;
+  margin: 0;
   font-family: $font-header;
   font-weight: 700;
-  position: relative;
-
-  h2 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-size: 1em;
-    margin: 0;
-  }
+  color: $dark-accent01;
 }
 
 .pattern {
