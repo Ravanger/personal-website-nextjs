@@ -74,10 +74,12 @@
 .mainImage {
   grid-column: 1 / -1;
   position: relative;
-  height: 24rem;
+  height: clamp(24rem, 50vw, 32rem);
+  overflow: hidden;
 
   @include tablet {
     grid-column: 2 / -2;
+    border-radius: 0.5rem;
   }
 
   @include desktop {
@@ -87,8 +89,10 @@
 
 .inlineImage {
   position: relative;
-  height: 24rem;
+  height: clamp(24rem, 50vw, 32rem);
   margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
 
   @include tablet {
     grid-column: 4 / -2;
