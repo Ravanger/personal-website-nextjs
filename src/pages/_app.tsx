@@ -5,7 +5,6 @@ import MainLayout from "layouts/MainLayout"
 
 // TODO: Style scrollbar
 // TODO: Fix fonts
-// TODO: Fix navbar on project page
 // TODO: Hover boxes on image grid
 // TODO: Work page images blur-up
 
