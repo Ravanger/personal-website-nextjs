@@ -6,8 +6,9 @@ import MainLayout from "layouts/MainLayout"
 // TODO: Style scrollbar
 // TODO: Hover boxes on image grid
 // TODO: Work page images blur-up
-// TODO: Main menu - Work subpage
 // TODO: Light mode
+// TODO: 404 Page
+// TODO: Micro-interaction hover states, animations, etc
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
