@@ -1,0 +1,23 @@
+@import "/src/styles/fonts/_fonts";
+@import "/src/styles/_colors";
+
+.navItem {
+  cursor: pointer;
+  font-family: $font-body;
+  text-transform: uppercase;
+  color: $dark-text-dim;
+  padding: 1em 0;
+  background-color: $dark-pattern;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active {
+  color: $dark-text;
+  background-color: $dark-bg-card;
+  border-top: solid 2px $dark-text;
+  padding: 1.5em 0;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+}

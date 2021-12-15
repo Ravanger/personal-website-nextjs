@@ -1,0 +1,14 @@
+@import "/src/styles/colors";
+
+.scrollToTop {
+  z-index: 100;
+  color: $dark-bg;
+  background-color: $dark-text;
+  border-radius: 50%;
+  position: fixed;
+  padding: 1em;
+  cursor: pointer;
+  left: 1.5rem;
+  bottom: 5.5rem;
+  font-size: 0.75rem;
+}

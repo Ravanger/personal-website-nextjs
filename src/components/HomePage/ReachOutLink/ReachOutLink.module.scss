@@ -1,0 +1,25 @@
+@import "/src/styles/colors";
+@import "/src/styles/fonts/fonts";
+
+.contactLink {
+  font-family: $font-header;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  text-align: center;
+  margin-right: -1rem;
+
+  span {
+    margin-right: -1rem;
+  }
+
+  button {
+    color: $dark-text;
+    text-decoration: underline;
+    transition: color 0.05s;
+    padding: 1em;
+    cursor: pointer;
+
+    &:active {
+      color: darken($dark-text, 10);
+    }
+  }
+}

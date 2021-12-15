@@ -3,21 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next-remote-watch data",
+    "next-dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sass": "^1.42.1"
+    "@plaiceholder/next": "^2.1.0",
+    "framer-motion": "^5.0.1",
+    "gray-matter": "^4.0.3",
+    "jotai": "^1.4.0",
+    "modern-normalize": "^1.1.0",
+    "next": "^12.0.2",
+    "next-compose-plugins": "^2.2.1",
+    "plaiceholder": "^2.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-markdown": "^7.1.1",
+    "remark-unwrap-images": "^3.0.1",
+    "sass": "^1.42.1",
+    "sharp": "^0.29.1",
+    "typescript": "^4.4.3"
   },
   "devDependencies": {
-    "@types/react": "17.0.25",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
-    "typescript": "4.4.3"
+    "@types/react": "^17.0.25",
+    "eslint": "^7",
+    "eslint-config-next": "^12.0.2",
+    "infer-next-props-type": "^0.0.4",
+    "next-remote-watch": "^1.0.0"
   }
 }

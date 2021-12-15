@@ -1,0 +1,42 @@
+@import "/src/styles/_colors";
+
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  padding: 1em;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.logo {
+  background: none;
+  border: none;
+  padding: 0;
+  justify-self: start;
+  cursor: pointer;
+  width: clamp(2.5rem, 7vw, 3.5rem);
+}
+
+.themeSwitch {
+  background: none;
+  border: none;
+  padding: 0.3em;
+  cursor: pointer;
+  text-align: center;
+  color: $dark-accent01;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  transition: color 0.05s;
+
+  &:active {
+    color: darken($dark-accent01, 20);
+  }
+}
+
+.contact {
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+  width: clamp(6rem, 50%, 10rem);
+  justify-self: flex-end;
+}

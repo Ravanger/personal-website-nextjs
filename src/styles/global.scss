@@ -1,0 +1,40 @@
+@use "sass:color";
+@import "fonts/_fonts";
+@import "_colors";
+
+body,
+html,
+#__next {
+  height: 100%;
+  min-width: 16rem;
+}
+
+body {
+  background-color: $dark-bg;
+  overflow-x: hidden;
+  white-space: pre-line;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+p {
+  margin: 0;
+}
+
+.modalOpen {
+  overflow: hidden;
+}
+
+img,
+video {
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

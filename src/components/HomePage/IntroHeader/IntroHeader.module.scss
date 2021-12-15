@@ -1,0 +1,64 @@
+@import "/src/styles/fonts/fonts";
+@import "/src/styles/colors";
+@import "/src/styles/breakpoints";
+
+.introHeader {
+  top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: $dark-bg-card;
+  overflow: hidden;
+  padding-bottom: 2rem;
+  padding-top: 8rem;
+  margin-top: -6rem;
+  min-width: 16rem;
+}
+
+.introContent {
+  max-width: 60rem;
+  isolation: isolate;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+.introText {
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 2;
+
+  @include tablet {
+    grid-column: 3 / span 5;
+  }
+
+  @include desktop {
+    grid-column: 5 / span 5;
+  }
+}
+
+.illustration {
+  grid-row: span 2 / 4;
+  grid-column: span 3 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: -2.6rem;
+  z-index: -10;
+
+  @include tablet {
+    grid-column: span 3 / -2;
+  }
+
+  @include desktop {
+    grid-column: span 4 / -4;
+  }
+}
+
+.boris {
+  font-family: $font-header;
+  font-size: clamp(1rem, 3vw, 2.25rem);
+}
+
+.icanhelp {
+  font-family: $font-body;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 125%;
+}

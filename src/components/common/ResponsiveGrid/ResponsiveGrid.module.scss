@@ -1,0 +1,17 @@
+@import "/src/styles/breakpoints";
+
+.responsiveGrid {
+  display: grid;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: 1rem repeat(4, 1fr) 1rem;
+  position: relative;
+
+  @include tablet {
+    grid-template-columns: 1rem repeat(8, 1fr) 1rem;
+  }
+
+  @include desktop {
+    grid-template-columns: 1rem repeat(12, 1fr) 1rem;
+  }
+}

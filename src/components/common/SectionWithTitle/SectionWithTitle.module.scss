@@ -1,0 +1,18 @@
+@import "/src/styles/fonts/fonts";
+@import "/src/styles/colors";
+@import "/src/styles/breakpoints";
+
+.content {
+  grid-column: 3 / -2;
+  font-family: $font-body;
+  line-height: 150%;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+
+  @include tablet {
+    grid-column: 4 / span 5;
+  }
+
+  @include desktop {
+    grid-column: 4 / span 8;
+  }
+}

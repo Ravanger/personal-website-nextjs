@@ -1,0 +1,9 @@
+@import "/src/styles/breakpoints";
+
+.container {
+  row-gap: 1rem;
+
+  @include desktop {
+    row-gap: 2rem;
+  }
+}

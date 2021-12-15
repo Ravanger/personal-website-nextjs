@@ -1,0 +1,143 @@
+@import "/src/styles/breakpoints";
+@import "/src/styles/colors";
+@import "/src/styles/fonts/fonts";
+
+.content {
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-family: $font-body;
+  }
+
+  h2 {
+    font-family: $font-header;
+  }
+
+  * {
+    grid-column: 3 / -2;
+    white-space: normal;
+    line-height: 150%;
+
+    @include tablet {
+      grid-column: 4 / -3;
+    }
+
+    @include desktop {
+      grid-column: 4 / -4;
+    }
+  }
+}
+
+.projectLinksNav {
+  grid-column: 2 / -2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-header;
+
+  * {
+    flex: 1;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  :nth-child(1) {
+    text-align: left;
+  }
+
+  :nth-child(2) {
+    text-align: center;
+  }
+
+  :nth-child(3) {
+    text-align: right;
+  }
+
+  @include tablet {
+    grid-column: 3 / -3;
+  }
+}
+
+.backButton {
+  color: $dark-bg;
+  background-color: $dark-text;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0.5em;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.mainImage {
+  grid-column: 1 / -1;
+  position: relative;
+  height: clamp(24rem, 50vw, 32rem);
+  overflow: hidden;
+
+  @include tablet {
+    grid-column: 2 / -2;
+    border-radius: 0.5rem;
+  }
+
+  @include desktop {
+    grid-column: 3 / -3;
+  }
+}
+
+.inlineImage {
+  position: relative;
+  height: clamp(24rem, 50vw, 32rem);
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+
+  @include tablet {
+    grid-column: 4 / -2;
+  }
+
+  @include desktop {
+    grid-column: 4 / -4;
+  }
+}
+
+.projectTags {
+  grid-column: 2 / -2;
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-header;
+  color: $dark-text-dim;
+  font-size: 0.8rem;
+
+  @include tablet {
+    grid-column: 4 / -4;
+  }
+
+  @include desktop {
+    grid-column: 5 / -5;
+  }
+}
+
+.articleTitle {
+  grid-column: 1 / span 2;
+  grid-row: 7 / span 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-header;
+
+  h2 {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+  }
+
+  span {
+    color: $dark-text-dim;
+    font-size: 0.8rem;
+  }
+
+  @include tablet {
+    grid-column: 1 / span 3;
+  }
+}

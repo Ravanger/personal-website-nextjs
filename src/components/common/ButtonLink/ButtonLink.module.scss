@@ -1,0 +1,32 @@
+@import "/src/styles/_colors";
+@import "src/styles/fonts/_fonts";
+
+.btn {
+  background-color: $dark-accent02;
+  color: $dark-text;
+  font-family: $font-header;
+  text-align: center;
+  padding: 0.8em;
+  border-radius: 0.4rem;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.05s;
+  text-decoration: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0.25rem;
+    border: $dark-text solid 0.18rem;
+    border-radius: 0.4rem;
+    transition: inset 0.05s;
+  }
+
+  &:active {
+    background-color: darken($dark-accent02, 10);
+
+    &:before {
+      inset: 0;
+    }
+  }
+}

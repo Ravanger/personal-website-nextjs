@@ -1,0 +1,30 @@
+@import "/src/styles/_colors";
+
+.externalLink {
+  text-decoration: none;
+  color: $dark-text;
+  position: relative;
+
+  .externalLinkIcon {
+    font-size: 0.5em;
+    position: absolute;
+    display: none;
+    transform: translateX(0.5em);
+  }
+
+  &:hover {
+    .externalLinkIcon {
+      display: inline;
+    }
+  }
+}
+
+.screenReader {
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  word-wrap: normal;
+}
